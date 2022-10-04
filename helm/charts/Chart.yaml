@@ -1,0 +1,9 @@
+name: affordable5g-api 
+description: Helm Chart for “Lost Children Event API” 
+version: 0.0.2
+apiVersion: v1
+keywords:
+  - affordable5g
+  - api
+sources:
+home:

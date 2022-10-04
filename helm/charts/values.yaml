@@ -1,0 +1,20 @@
+api:
+  env:
+    EDGE_SERVER_ADDRESS: "Add edge server address here"
+    EDGE_SERVER_USER: "Add edge server user's name here"
+    EDGE_SERVER_PASSWORD: "Add edge server user's password here"
+    ENVIRONMENT: "Add environment  here (i.e. dev)"
+    NETWORK_FUNCTION_ADDRESS: "Add address here"
+    NETWORK_FUNCTION_USER: "Add USER here"
+    NETWORK_FUNCTION_PASSWORD: "Add PASSWORD here"
+    OSM_USER: "Add OSM user's name here"
+    OSM_PASSWORD: "Add OSM user's PASSWORD here"
+    SYSTEM_USER: "Add system user's name here"
+    SYSTEM_PASSWORD: "Add system user's PASSWORD here"
+    UVICORN_HOST: "0.0.0.0"
+    UVICORN_PORT: "\"5000\""
+  image: ghcr.io/affordable5gintegrations/affordable5g-service_x:main
+  pullSecrets: regcred
+image:
+  pullPolicy: IfNotPresent
+

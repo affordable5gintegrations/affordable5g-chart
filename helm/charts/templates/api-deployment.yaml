@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.affordable5g.service: api
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.affordable5g.service: api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.affordable5g.network/nginx_network: "true"
+        io.affordable5g.service: api
+    spec:
+      containers:
+        - args:
+            - python3
+            - -m
+            - uvicorn
+            - main:app
+            - --reload
+#            - --env-file
+#            - .dev.env
+          env:
+            - name: EDGE_SERVER_ADDRESS
+              value: {{ .Values.api.env.EDGE_SERVER_ADDRESS }}
+            - name: EDGE_SERVER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key:  EDGE_SERVER_PASSWORD
+                  name: {{ .Release.Name }}-auth              
+            - name: EDGE_SERVER_USER
+              valueFrom:
+                secretKeyRef:
+                  key:  EDGE_SERVER_USER
+                  name: {{ .Release.Name }}-auth
+            - name: ENVIRONMENT
+              value: {{ .Values.api.env.ENVIRONMENT }}
+            - name: NETWORK_FUNCTION_ADDRESS
+              value: {{ .Values.api.env.NETWORK_FUNCTION_ADDRESS }}
+            - name: NETWORK_FUNCTION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key:  NETWORK_FUNCTION_PASSWORD
+                  name: {{ .Release.Name }}-auth
+            - name: NETWORK_FUNCTION_USER
+              valueFrom:
+                secretKeyRef:
+                  key:  NETWORK_FUNCTION_USER
+                  name: {{ .Release.Name }}-auth
+            - name: OSM_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key:  OSM_PASSWORD
+                  name: {{ .Release.Name }}-auth
+            - name: OSM_USER
+              valueFrom:
+                secretKeyRef:
+                  key:  OSM_USER
+                  name: {{ .Release.Name }}-auth
+            - name: SYSTEM_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key:  SYSTEM_PASSWORD
+                  name: {{ .Release.Name }}-auth
+            - name: SYSTEM_USER
+              valueFrom:
+                secretKeyRef:
+                  key:  SYSTEM_USER
+                  name: {{ .Release.Name }}-auth
+            - name: UVICORN_HOST
+              value: {{ .Values.api.env.UVICORN_HOST }}
+            - name: UVICORN_PORT
+              value: {{ .Values.api.env.UVICORN_PORT }}
+          image: {{ .Values.api.image }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          name: api
+          ports:
+            - containerPort: 5000
+          resources: {}
+      imagePullSecrets: {{ .Values.image.pullSecrets }}
+      restartPolicy: Always
+status: {}

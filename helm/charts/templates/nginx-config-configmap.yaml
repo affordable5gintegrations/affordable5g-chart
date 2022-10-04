@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: affordable5g-nginxconfig
+  labels:
+    app.kubernetes.io/name: affordable5g_service
+    helm.sh/chart: affordable5g
+#    app.kubernetes.io/instance: {{ .Release.Name }}
+#    app.kubernetes.io/managed-by: {{ .Release.Service }}
+data:
+  default.conf: |-
+{{ .Files.Get "files/nginx/default.conf" | indent 4 }}
+
