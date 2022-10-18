@@ -2,7 +2,18 @@ apiVersion: v1
 entries:
   affordable5g-api:
   - apiVersion: v1
-    created: "2022-10-06T15:07:33.201971+01:00"
+    created: "2022-10-18T14:17:00.85679+01:00"
+    description: Helm Chart for “Lost Children Event API”
+    digest: 0684008c1db99ff51b1c833170c3bf4947424a8f758a3d632eed60ea5f1df334
+    keywords:
+    - affordable5g
+    - api
+    name: affordable5g-api
+    urls:
+    - https://affordable5gintegrations.github.io/affordable5g-chart/helm/affordable5g-api-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
+    created: "2022-10-18T14:17:00.856268+01:00"
     description: Helm Chart for “Lost Children Event API”
     digest: fe451dc3af6c7a370546da0ce2cd8bf7f2b74110693e3da9f922a44786106e9c
     keywords:
@@ -13,7 +24,7 @@ entries:
     - https://affordable5gintegrations.github.io/affordable5g-chart/helm/affordable5g-api-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: "2022-10-06T15:07:33.201554+01:00"
+    created: "2022-10-18T14:17:00.855729+01:00"
     description: Helm Chart for “Lost Children Event API”
     digest: 74bd793fe0020b24cbdc5ebc01dbda93156e6c2454aef63203c5cf0104dcd48b
     keywords:
@@ -23,4 +34,4 @@ entries:
     urls:
     - https://affordable5gintegrations.github.io/affordable5g-chart/helm/affordable5g-api-0.0.1.tgz
     version: 0.0.1
-generated: "2022-10-06T15:07:33.200913+01:00"
+generated: "2022-10-18T14:17:00.852739+01:00"

@@ -84,6 +84,7 @@ spec:
           ports:
             - containerPort: 5000
           resources: {}
-      imagePullSecrets: {{ .Values.image.pullSecrets }}
+      imagePullSecrets: 
+         - name: regsecretcreds
       restartPolicy: Always
 status: {}
