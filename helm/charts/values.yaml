@@ -14,6 +14,5 @@ api:
     UVICORN_HOST: "0.0.0.0"
     UVICORN_PORT: "\"5000\""
   image: ghcr.io/affordable5gintegrations/affordable5g-service_x:main
-  dockerconfigjson: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiamFpbWV2ZW50dXJhIiwicGFzc3dvcmQiOiJnaHBfMzk2NUQxdWpoM2hUeXp4dXZ0N3FmZzhtUzFMbXhmMlRZUm1XIiwiYXV0aCI6ImFtRnBiV1YyWlc1MGRYSmhPbWRvY0Y4ek9UWTFSREYxYW1nemFGUjVlbmgxZG5RM2NXWm5PRzFUTVV4dGVHWXlWRmxTYlZjPSJ9fX0=
 image:
   pullPolicy: IfNotPresent
